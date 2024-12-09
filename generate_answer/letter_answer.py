@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-GROQ_API_KEY = os.environ("GROQ_API_KEY")
+GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 client = Groq(api_key=GROQ_API_KEY)
 
 def generate_letter_answer(question, letter_type):

@@ -15,7 +15,7 @@ def safe_json_parse(text):
     except json.JSONDecodeError as e:
         return None, str(e)
     
-GROQ_API_KEY = os.environ("GROQ_API_KEY")
+GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 
 def evaluate_ssc_precis(passage, precis_text, difficulty_type):
     

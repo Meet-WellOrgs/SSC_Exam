@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GROQ_API_KEY = os.environ("GROQ_API_KEY")
+GROQ_API_KEY = os.environ["GROQ_API_KEY"]
 
 def clean_invalid_chars(text):
     return re.sub(r'[\x00-\x1F\x7F]', '', text)
