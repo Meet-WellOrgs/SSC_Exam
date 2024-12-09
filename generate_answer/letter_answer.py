@@ -1,6 +1,12 @@
 from groq import Groq
+import os
+from dotenv import load_dotenv
 
-client = Groq(api_key="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")
+load_dotenv()
+
+
+GROQ_API_KEY = os.environ("GROQ_API_KEY")
+client = Groq(api_key=GROQ_API_KEY)
 
 def generate_letter_answer(question, letter_type):
     # letter type would be formal or informal

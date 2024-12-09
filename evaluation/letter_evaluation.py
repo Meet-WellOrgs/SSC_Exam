@@ -1,6 +1,12 @@
 from groq import Groq
 import re
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GROQ_API_KEY = os.environ("GROQ_API_KEY")
 
 def clean_invalid_chars(text):
     return re.sub(r'[\x00-\x1F\x7F]', '', text)
@@ -13,7 +19,7 @@ def safe_json_parse(text):
 
 def evaluate_ssc_letter(question, letter_text, difficulty_type):
     
-    client = Groq(api_key="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")  
+    client = Groq(api_key=GROQ_API_KEY)  
     
     marking_scheme = {
         "Relevance": 10,
